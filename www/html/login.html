@@ -1,0 +1,30 @@
+<ons-page ng-controller="loginCtr">
+    <!--ログインページ-->
+    <div class="content" id="loginBody" style="text-align:center; visibility:visible">
+        <h3>ログイン</h3> 担当者コード
+        <div>
+            <ons-input modifier="material" id="chargeCd" float></ons-input>
+        </div>
+        <div>
+            <ons-button id="loginBtn" ng-click="onLogin()">
+                ログイン
+            </ons-button>
+        </div>
+        <div id="loadingIcon" style="visibility:hidden">
+            <ons-icon icon="fa-spinner" spin="true" style="opacity:0.7"></ons-icon> ログイン中...
+        </div>
+    </div>
+
+    <template id="dialog.html">
+        <!--アラート専用画面-->
+        <ons-dialog var="errDialog" cancelable>
+            <div style="text-align: center; padding: 10px">
+                <p id="errorMessage">
+                    </p>
+                        <p>
+                            <ons-button ng-click="errDialog.hide()">閉じる</ons-button>
+                        </p>
+            </div>
+        </ons-dialog>
+    </template>
+</ons-page>
